@@ -6,6 +6,7 @@ const hitPointEl = document.querySelector('#hit-points');
 const enemiesEl = document.querySelector('.enemies');
 const lankyEl = document.querySelector('#lanky');
 const killsEl = document.querySelector('#kills');
+const formEl = document.querySelector('form');
 
 /* State */
 let hitPoints = 10;
@@ -17,6 +18,24 @@ const enemies = [
 ];
 
 /* Events */
+formEl.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const name = new FormData(formEl);
+
+    const newEnemy = {
+        id: currentId,
+        name: name.get('enemy-name'),
+        hp: Math.ceil(Math.random() * 5),
+    };
+
+    currentId++;
+
+    enemies.push(newEnemy);
+
+    displayEnemies();
+});
+
 function enemyHandler(enemy) {
     if (enemy.hp <= 0) return;
 
@@ -47,7 +66,6 @@ function enemyHandler(enemy) {
     killsEl.textContent = defeatedEnemies;
 
     const hpEl = document.getElementById(`enemy-hp-${enemy.id}`);
-    console.log(hpEl);
     hpEl.textContent = enemy.hp < 0 ? 0 : enemy.hp;
 }
 
