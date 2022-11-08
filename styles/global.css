@@ -33,3 +33,27 @@ header .logo {
 main {
     padding: 20px;
 }
+
+#lanky-stats {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    float: left;
+}
+
+#enemy-stats {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    float: right;
+}
+
+#lanky {
+    max-width: 200px;
+}
