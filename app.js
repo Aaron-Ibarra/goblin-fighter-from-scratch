@@ -4,11 +4,13 @@ import { renderEnemy } from './render-utils.js';
 /* Get DOM Elements */
 const hitPointEl = document.querySelector('#hit-points');
 const enemiesEl = document.querySelector('.enemies');
+const lankyEl = document.querySelector('#lanky');
+const killsEl = document.querySelector('#kills');
 
 /* State */
 let hitPoints = 10;
 let defeatedEnemies = 0;
-let currentId = 4;
+let currentId = 3;
 const enemies = [
     { id: 1, name: 'Ganon', hp: 3 },
     { id: 2, name: 'Stinker', hp: 1 },
@@ -31,6 +33,22 @@ function enemyHandler(enemy) {
     } else {
         alert(`${enemy.name} tried to hit you but MISSED. Nice roll Lanky :)`);
     }
+
+    if (enemy.hp === 0) {
+        defeatedEnemies++;
+    }
+
+    if (hitPoints === 0) {
+        document.getElementById('lanky').src = '../assets/dead.jpg';
+        alert('GAME OVER, LANKY');
+    }
+
+    hitPointEl.textContent = hitPoints;
+    killsEl.textContent = defeatedEnemies;
+
+    const hpEl = document.getElementById(`enemy-hp-${enemy.id}`);
+    console.log(hpEl);
+    hpEl.textContent = enemy.hp < 0 ? 0 : enemy.hp;
 }
 
 /* Display Functions */
