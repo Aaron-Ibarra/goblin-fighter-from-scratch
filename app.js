@@ -20,6 +20,10 @@ const enemies = [
 /* Events */
 formEl.addEventListener('submit', (event) => {
     event.preventDefault();
+    if (hitPoints === 0) {
+        alert('NO LANKY, NO ENEMY');
+        return;
+    }
 
     const name = new FormData(formEl);
 
@@ -37,7 +41,7 @@ formEl.addEventListener('submit', (event) => {
 });
 
 function enemyHandler(enemy) {
-    if (enemy.hp <= 0) return;
+    if (enemy.hp <= 0 || hitPoints === 0) return;
 
     if (Math.random() < 0.5) {
         enemy.hp--;
@@ -55,6 +59,8 @@ function enemyHandler(enemy) {
 
     if (enemy.hp === 0) {
         defeatedEnemies++;
+        const appearanceEl = document.getElementById(`enemy-appearance-${enemy.id}`);
+        appearanceEl.classList.add('dead');
     }
 
     if (hitPoints === 0) {
