@@ -8,7 +8,7 @@ export function renderEnemy(enemy) {
     appearanceEl.id = `enemy-appearance-${enemy.id}`;
     if (enemy.hp === 0) {
         enemyEl.classList.add('bat');
-        enemyEl.classList.add('dead');
+        appearanceEl.classList.add('dead');
     } else {
         enemyEl.classList.add('bat');
     }
