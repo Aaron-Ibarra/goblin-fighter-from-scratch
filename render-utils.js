@@ -4,6 +4,8 @@ export function renderEnemy(enemy) {
     const hpEl = document.createElement('p');
     const appearanceEl = document.createElement('img');
 
+    let enemyType = Math.ceil(Math.random() * 3);
+
     appearanceEl.src = '../assets/bat.png';
     appearanceEl.id = `enemy-appearance-${enemy.id}`;
     if (enemy.hp === 0) {
