@@ -3,10 +3,11 @@ import { renderEnemy } from './render-utils.js';
 
 /* Get DOM Elements */
 const hitPointEl = document.querySelector('#hit-points');
-const enemiesEl = document.querySelector('.enemies');
+const enemiesEl = document.querySelector('#enemies');
 const lankyEl = document.querySelector('#lanky');
 const killsEl = document.querySelector('#kills');
 const formEl = document.querySelector('form');
+const defeatsEl = document.querySelector('defeated');
 
 /* State */
 let hitPoints = 10;
@@ -72,12 +73,13 @@ function enemyHandler(enemy) {
     killsEl.textContent = defeatedEnemies;
 
     const hpEl = document.getElementById(`enemy-hp-${enemy.id}`);
-    hpEl.textContent = enemy.hp < 0 ? 0 : enemy.hp;
+    hpEl.textContent = enemy.hp <= 0 ? `DEAD AF` : `HP: ${enemy.hp}`;
 }
 
 /* Display Functions */
 function displayEnemies() {
     enemiesEl.textContent = '';
+    killsEl.textContent = defeatedEnemies;
 
     for (let enemy of enemies) {
         const currentEnemy = renderEnemy(enemy);

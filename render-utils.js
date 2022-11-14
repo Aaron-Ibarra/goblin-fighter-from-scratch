@@ -15,10 +15,10 @@ export function renderEnemy(enemy) {
 
     nameEl.textContent = enemy.name;
 
-    hpEl.textContent = enemy.hp < 0 ? 0 : enemy.hp;
+    hpEl.textContent = enemy.hp < 0 ? 'DEAD AF' : `HP: ${enemy.hp}`;
     hpEl.id = `enemy-hp-${enemy.id}`;
 
-    enemyEl.append(appearanceEl, hpEl, nameEl);
+    enemyEl.append(nameEl, appearanceEl, hpEl);
 
     return enemyEl;
 }

@@ -15,6 +15,12 @@
 
         <!-- fonts -->
         <!-- see https://fonts.google.com/ -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap"
+            rel="stylesheet"
+        />
 
         <!-- css -->
         <link rel="stylesheet" href="styles/reset.css" />
@@ -24,7 +30,7 @@
 
     <body>
         <header>
-            <img class="logo" src="assets/html_css_js.png" alt="logo" />
+            <img class="logo" src="assets/cubeforce.png" alt="logo" />
             <h1>The Legend Of Lanky</h1>
         </header>
 
@@ -40,7 +46,7 @@
                     <input name="enemy-name" id="enemy-name" type="text" />
                     <button type="submit">New Enemy</button>
                 </form>
-                <div class="enemies">Enemies</div>
+                <div id="enemies"></div>
             </div>
         </main>
     </body>

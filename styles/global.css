@@ -6,8 +6,11 @@
 }
 
 body {
-    font-family: var(--primary-font);
-    background: var(--background);
+    background: url('/assets/legend-of-lanky-background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     display: grid;
     grid-template-rows: auto 1fr;
 }
@@ -22,6 +25,7 @@ header {
     align-items: center;
     gap: 10px;
 
+    font-family: 'Noto Sans Mono', monospace;
     background-color: var(--header-background);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
@@ -44,6 +48,7 @@ main {
     align-items: center;
     justify-content: space-between;
     float: left;
+    font-size: 2em;
 }
 
 #enemy-stats {
@@ -54,16 +59,34 @@ main {
     justify-content: space-around;
     align-items: center;
     float: right;
+    font-size: 25px;
+}
+
+#enemy-stats form {
+    display: flex;
+    border: black solid 3px;
+    background-color: grey;
+    color: rgb(255, 255, 255);
+    align-items: center;
+    gap: 15px;
 }
 
 #lanky {
     max-width: 200px;
+    border: solid black 10px;
 }
 
 .bat {
     display: flex;
-    width: 100px;
+    width: auto;
     height: 100px;
+    gap: 25px;
+    border: solid black 5px;
+    padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    align-items: center;
+    background-color: wheat;
 }
 
 .dead {
